@@ -18,7 +18,7 @@ public class PhotoUploadStepDefs {
 	
 	@When("I click the Click to change the photo icon")
 	public void i_click_the_Click_to_change_the_photo_icon(){
-		photoActions.clickuploadBtn();
+		photoActions.clickUploadBtn();
 	}
 
 	@When("I upload the photo file from my system")

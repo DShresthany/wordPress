@@ -22,7 +22,7 @@ public void i_land_on_wordpress_my_user_profile_page() {
 	actions.clickContinueBtn();
 	WebDriverWait wait = new WebDriverWait(SetupDrivers.driver, 10);
 	wait.until(ExpectedConditions.titleContains("My Profile"));
-	Assert.assertEquals(true, actions.verifyprofile());
+	Assert.assertEquals(true, actions.verifyProfile());
 
 }
 
