@@ -13,24 +13,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.wordpress.elements.ProfileLinksElements;
 import com.wordpress.utilities.SetupDrivers;
 
-public class ProfilelinksAction {
+public class ProfileLinksAction {
 
 	ProfileLinksElements elements;
 	public String addedUrl;
 	public String addedDescription;
 
-	public ProfilelinksAction() {
+	public ProfileLinksAction() {
 		this.elements = new ProfileLinksElements();
 		PageFactory.initElements(SetupDrivers.driver, elements);
 	}
 
 	// To be completed
-	public void deletAllLinks() throws InterruptedException{
+	public void deleteAllLinks() throws InterruptedException{
 	
-		List<WebElement> linkstoDelete = SetupDrivers.driver.findElements(By.xpath("//button[@class='button profile-link__remove is-borderless']"));
-		System.out.println("Number of Url Links present: " + linkstoDelete.size());
-		if(linkstoDelete.size()>0) {
-		for(WebElement li : linkstoDelete) {
+		List<WebElement> linksToDelete = SetupDrivers.driver.findElements(By.xpath("//button[@class='button profile-link__remove is-borderless']"));
+		System.out.println("Number of Url Links present: " + linksToDelete.size());
+		if(linksToDelete.size()>0) {
+		for(WebElement li : linksToDelete) {
 //			WebDriverWait wait = new WebDriverWait(SetupDrivers.driver, 5);
 //			wait.until(ExpectedConditions.elementToBeClickable(li));
 			Thread.sleep(2000);
@@ -57,7 +57,7 @@ public class ProfilelinksAction {
 	}
 
 	public Boolean verifyAddUrlbox() {
-		Boolean bool = false;
+		boolean bool = false;
 		if (elements.enterUrlBox.isDisplayed()) {
 			bool = true;
 		}
@@ -65,7 +65,7 @@ public class ProfilelinksAction {
 	}
 
 	public Boolean verifyAddDescriptionbox() {
-		Boolean bool = false;
+		boolean bool = false;
 		if (elements.enterDescriptionBox.isDisplayed()) {
 			bool = true;
 		}
@@ -95,7 +95,7 @@ public class ProfilelinksAction {
 	}
 
 	public Boolean verifyUrl() {
-		Boolean bool = false;
+		boolean bool = false;
 		List <WebElement> elements = SetupDrivers.driver.findElements(By.cssSelector(".profile-link>a:nth-of-type(1)"));
 		
 		for(WebElement links : elements) {
@@ -111,7 +111,7 @@ public class ProfilelinksAction {
 	
 	
 	public Boolean verfifyUrlOpens(String url) {
-		Boolean bool = false;
+		boolean bool = false;
 		String parentWindow = SetupDrivers.driver.getWindowHandle();
 		Set<String> windows = SetupDrivers.driver.getWindowHandles();
 		for (String childWindow : windows) {
@@ -131,7 +131,7 @@ public class ProfilelinksAction {
 	}
 
 	public Boolean verifyDescription() {
-		Boolean bool = false;
+		boolean bool = false;
 		WebElement actualdDescription = SetupDrivers.driver
 				.findElement(By.cssSelector("span[class='profile-link__title']"));
 		String description = actualdDescription.getText();
@@ -144,7 +144,7 @@ public class ProfilelinksAction {
 	
 	public Boolean verifyAddButtonDisabled(){
 		
-		Boolean bool = true;
+		boolean bool = true;
 		if(elements.addButton.isEnabled()) {
 			bool = false;
 		}
@@ -152,7 +152,7 @@ public class ProfilelinksAction {
 	}
 	
 	public Boolean verifyErrorMessage() {
-		Boolean bool = false;
+		boolean bool = false;
 	
 		if(elements.errorMessage.isEnabled()) {
 			bool = true;
@@ -165,7 +165,7 @@ public class ProfilelinksAction {
 	}
 	
 	public Boolean verifyCancel() {
-		Boolean bool = false;
+		boolean bool = false;
 		if(!elements.linkInputField.isDisplayed()) {
 			bool=true;
 		}
@@ -188,7 +188,7 @@ public class ProfilelinksAction {
 	}
 	
 	public Boolean verfifyCreateSiteWindow() {
-		Boolean bool = false;
+		boolean bool = false;
 		String parentWindow = SetupDrivers.driver.getWindowHandle();
 		Set<String> windows = SetupDrivers.driver.getWindowHandles();
 		for (String childWindow : windows) {
@@ -212,7 +212,7 @@ public class ProfilelinksAction {
 	}
 	
 	public Boolean verifyJetpackPage() {
-		Boolean bool = false;
+		boolean bool = false;
 		String parentWindow = SetupDrivers.driver.getWindowHandle();
 		Set<String> windows = SetupDrivers.driver.getWindowHandles();
 		for (String childWindow : windows) {

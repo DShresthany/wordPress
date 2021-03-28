@@ -10,7 +10,7 @@ public class ProfileElements {
 	public WebElement username;
 	
 	@FindBy(css = ".button.form-button.is-primary")
-	public WebElement continueloginButtn;
+	public WebElement continueLoginButton;
 	
 	@FindBy(id = "password")
 	public WebElement password;

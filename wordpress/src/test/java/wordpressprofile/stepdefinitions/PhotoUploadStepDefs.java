@@ -5,6 +5,7 @@ package wordpressprofile.stepdefinitions;
 
 import java.awt.AWTException;
 
+import java.net.URISyntaxException;
 import org.junit.Assert;
 
 import com.wordpress.actions.PhotoUploadActions;
@@ -17,7 +18,7 @@ public class PhotoUploadStepDefs {
 	PhotoUploadActions photoActions = new PhotoUploadActions();
 	
 	@When("I click the Click to change the photo icon")
-	public void i_click_the_Click_to_change_the_photo_icon(){
+	public void i_click_the_Click_to_change_the_photo_icon() throws URISyntaxException {
 		photoActions.clickUploadBtn();
 	}
 
@@ -28,7 +29,7 @@ public class PhotoUploadStepDefs {
 
 	@Then("I should see the message that says my photo is successfully uploaded")
 	public void i_should_see_the_message_that_says_my_photo_is_successfully_uploaded() throws InterruptedException {
-	   Assert.assertEquals(true, photoActions.verifysuccessfulUpload());
+	   Assert.assertEquals(true, photoActions.verifySuccessfulUpload());
 	}
 
 	@Then("My photo is uploaded to be displayed in my profile")

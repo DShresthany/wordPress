@@ -38,23 +38,19 @@ public class ProfileActions {
   }
 
   public String getFirstName() {
-    String firstname = elements.firstName.getText();
-    return firstname;
+    return elements.firstName.getText();
   }
 
   public String getLastName() {
-    String lastname = elements.lastName.getText();
-    return lastname;
+    return elements.lastName.getText();
   }
 
   public String getPublicName() {
-    String publicname = elements.displayName.getText();
-    return publicname;
+    return elements.displayName.getText();
   }
 
-  public String getAbtme() {
-    String abtme = elements.description.getText();
-    return abtme;
+  public String getAboutMe() {
+    return elements.description.getText();
   }
 
   public void enterUserName() {
@@ -62,7 +58,7 @@ public class ProfileActions {
   }
 
   public void clickContinueBtn() {
-    elements.continueloginButtn.click();
+    elements.continueLoginButton.click();
   }
 
   public void enterPassword() {
@@ -100,7 +96,7 @@ public class ProfileActions {
   }
 
   public Boolean verifyProfileName(String publicName) {
-    Boolean bool = false;
+    boolean bool = false;
     WebElement pubName = SetupDrivers.driver
         .findElement(By.xpath("//h2[text()='" + publicName + "']"));
     System.out.println(pubName.getText());
@@ -115,7 +111,7 @@ public class ProfileActions {
   }
 
   public Boolean verifyNewProfileWindow() {
-    Boolean bool = false;
+    boolean bool = false;
     String parentWindow = SetupDrivers.driver.getWindowHandle();
     Set<String> windows = SetupDrivers.driver.getWindowHandles();
     for (String childWindow : windows) {
@@ -134,7 +130,7 @@ public class ProfileActions {
   }
 
   public Boolean verifyProfileInfoTab() {
-    Boolean bool = false;
+    boolean bool = false;
     if (SetupDrivers.driver.getTitle().contains(publicName)) {
       bool = true;
     }
@@ -147,7 +143,7 @@ public class ProfileActions {
     elements.saveButton.click();
   }
 
-  public boolean verfiySaveAction() {
+  public boolean verifySaveAction() {
     boolean flag = false;
     if (elements.successNotification.isDisplayed()) {
       flag = true;
@@ -155,8 +151,8 @@ public class ProfileActions {
     return flag;
   }
 
-  public Boolean verifyUsernamewithPublicName() {
-    Boolean bool = false;
+  public Boolean verifyUsernameWithPublicName() {
+    boolean bool = false;
     String publicName = elements.displayName.getAttribute("value");
     System.out.println(publicName);
     if (publicName.equals(USERNAME)) {
@@ -167,14 +163,14 @@ public class ProfileActions {
 
   }
 
-  public void clickGavatarLink() {
+  public void clickGravatarLink() {
     elements.gravatarLink.click();
   }
 
-  public Boolean verifyNewGavatarWindow() {
-    Boolean bool = false;
-    String actualchildUrl = null;
-    String expectedchildUrl = null;
+  public Boolean verifyNewGravatarWindow() {
+    boolean bool = false;
+    String actualChildUrl = null;
+    String expectedChildUrl = null;
     String parentWindow = SetupDrivers.driver.getWindowHandle();
 
     Set<String> windows = SetupDrivers.driver.getWindowHandles();
@@ -182,11 +178,11 @@ public class ProfileActions {
     for (String childWindow : windows) {
       if (!parentWindow.equals(childWindow)) {
         SetupDrivers.driver.switchTo().window(childWindow);
-        actualchildUrl = SetupDrivers.driver.switchTo().window(childWindow).getCurrentUrl();
-        expectedchildUrl = "http://en.gravatar.com/support/profile-hovercards/";
+        actualChildUrl = SetupDrivers.driver.switchTo().window(childWindow).getCurrentUrl();
+        expectedChildUrl = "http://en.gravatar.com/support/profile-hovercards/";
       }
 
-      if (actualchildUrl == expectedchildUrl) {
+      if (null != actualChildUrl && actualChildUrl.equals(expectedChildUrl)) {
         bool = true;
       }
 

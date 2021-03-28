@@ -5,11 +5,8 @@ package wordpressprofile.stepdefinitions;
 
 
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.wordpress.actions.ProfilelinksAction;
-import com.wordpress.utilities.SetupDrivers;
+import com.wordpress.actions.ProfileLinksAction;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,11 +14,11 @@ import io.cucumber.java.en.When;
 
 public class ProfilelinksAddDelete {
 	
-	ProfilelinksAction action = new ProfilelinksAction();
+	ProfileLinksAction action = new ProfileLinksAction();
 	
 	@Given("There no Url links present in the profile links")
 	public void there_no_Url_links_present_in_the_profile_links() throws InterruptedException {
-		action.deletAllLinks();
+		action.deleteAllLinks();
 
 	}
 	

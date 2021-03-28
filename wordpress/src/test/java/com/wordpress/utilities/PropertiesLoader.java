@@ -7,12 +7,15 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PropertiesLoader {
 
   private static final String PROPERTIES_FILE_PATH = "src/test/resources/test_config.properties";
   private static PropertiesLoader SINGLE_INSTANCE = null;
   private final Properties properties = new Properties();
+  private static final Logger logger = LogManager.getLogger(PropertiesLoader.class);
 
   private PropertiesLoader() {
   }
@@ -27,6 +30,7 @@ public class PropertiesLoader {
             SINGLE_INSTANCE = new PropertiesLoader();
             SINGLE_INSTANCE.properties.load(file);
           } catch (IOException e) {
+            logger.error("Error loading properties", e);
             e.printStackTrace();
           }
         }
