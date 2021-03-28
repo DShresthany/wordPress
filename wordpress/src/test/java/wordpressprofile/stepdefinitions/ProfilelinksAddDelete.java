@@ -22,9 +22,8 @@ public class ProfilelinksAddDelete {
 
 	}
 	
-	@When("I click the add buttion")
-	public void i_click_the_add_buttion() {
-	
+	@When("I click the add button")
+	public void i_click_the_add_button() {
 		action.clickAddLink();		
 	}
 

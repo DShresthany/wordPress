@@ -1,4 +1,4 @@
-@profilepage
+@profilePage
 Feature: WordPress profile page update test
 
   @smoke
@@ -16,7 +16,7 @@ Feature: WordPress profile page update test
       | firstname | lastname | public display name | description                |
       | Dikesh    | Shrestha | Dikesh              | My name is Dikesh Shrestha |
       | Jacky     | Shrestha | Jacky123            | My name is Jacky Shrestha  |
-      |	Mike O'Leary| Jôse   | Mikey               | Long description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel elit eu est tincidunt luctus pretium et massa. Maecenas vitae nisl dictum, consectetur justo in, fringilla massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ultricies tortor id fringilla varius. Nullam facilisis eleifend felis, ut congue est. Suspendisse justo orci, gravida at lacus cursus, mattis imperdiet diam. Nullam ornare dolor et leo ullamcorper rhoncus. Proin finibus, metus in laoreet sodales, ante velit ultricies lacus, et sodales mi libero eget odio. Phasellus at faucibus ligula, ultrices tempus est. Proin in consequat elit. In quam eros, pharetra vitae massa. |
+      |	Mike O'Leary| Jï¿½se   | Mikey               | Long description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel elit eu est tincidunt luctus pretium et massa. Maecenas vitae nisl dictum, consectetur justo in, fringilla massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ultricies tortor id fringilla varius. Nullam facilisis eleifend felis, ut congue est. Suspendisse justo orci, gravida at lacus cursus, mattis imperdiet diam. Nullam ornare dolor et leo ullamcorper rhoncus. Proin finibus, metus in laoreet sodales, ante velit ultricies lacus, et sodales mi libero eget odio. Phasellus at faucibus ligula, ultrices tempus est. Proin in consequat elit. In quam eros, pharetra vitae massa. |
       |	LongName-Lorem ipsum dolor sit amet,|  Fusce vel elit eu est tincidunt luctus  |  Maecenas vitae nisl dictum, consectetur justo in, fringilla massa   | Lorem ipsum dolor sit amet  |
       #More scenarios like empty firstname and lastname
       

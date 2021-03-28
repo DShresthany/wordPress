@@ -5,12 +5,12 @@ import io.cucumber.testng.CucumberOptions;
 
 public class ProfileRunner {
 
-	@CucumberOptions(plugin = { "pretty", "html:target/cucumber-HTMLreports",
-			"json:target/cucumber-jsonreports/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, features = {
-					"src/test/resources/wordPressFeatures" }, 
-			glue = { "wordpressprofile.stepdefinitions" }, tags = {}, monochrome = true)
-	
-	public class RunCucumberTest extends AbstractTestNGCucumberTests {
+  @CucumberOptions(plugin = {"pretty", "html:target/cucumber-HTMLreports",
+      "json:target/cucumber-jsonreports/cucumber.json"}, features = {
+      "src/test/java/features/"},
+      glue = {"wordpressprofile.stepdefinitions"}, tags = {}, monochrome = true)
 
-	}
+  public static class RunCucumberTest extends AbstractTestNGCucumberTests {
+
+  }
 }

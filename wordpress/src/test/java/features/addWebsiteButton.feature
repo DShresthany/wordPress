@@ -6,7 +6,7 @@ Feature: Wordpress profile add feature
   Scenario Outline: Validating that user can click the add button and add url
     Given I land on wordpress my user profile page
     And There no Url links present in the profile links
-    When I click the add buttion
+    When I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I enter a valid url "<Url>" and description "<Description>"
@@ -22,7 +22,7 @@ Feature: Wordpress profile add feature
   Scenario Outline: Validating that user can land on a new browser window by clicking the url link
     Given I land on wordpress my user profile page
     And There no Url links present in the profile links
-    When I click the add buttion
+    When I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I enter a valid url "<Url>" and description "<Description>"
@@ -37,11 +37,11 @@ Feature: Wordpress profile add feature
       | https://www.amazon.com/      | It is an Amazon Website |
 
 
-  @smoke1
+  @smoke
   Scenario Outline: Validating that user can delete url link from the Profile links section
     Given I land on wordpress my user profile page
     And There no Url links present in the profile links
-    When I click the add buttion
+    When I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I enter a valid url "<Url>" and description "<Description>"
@@ -56,11 +56,11 @@ Feature: Wordpress profile add feature
       | https://www.amazon.com/      | It is an Amazon Website |
 
 
-  @smoke2 @negetive
+  @smoke @regression
   Scenario Outline: Validating that user cannot add url link without description
     Given I land on wordpress my user profile page
     And There no Url links present in the profile links
-    When I click the add buttion
+    When I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I fail to enter a valid url "<Url>" or description "<Description>"
@@ -73,16 +73,16 @@ Feature: Wordpress profile add feature
       |                              | It is a amazon Website |
 
 
-  @smoke3 @negetive
+  @smoke @regression
   Scenario Outline: Validating that user cannot add existing url
     Given I land on wordpress my user profile page
     And There no Url links present in the profile links
-    When I click the add buttion
+    When I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I enter a valid url "<Url>" and description "<Description>"
     And I click Add Site button
-    And I click the add buttion
+    And I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I enter a valid url "<Url>" and description "<Description>"
@@ -95,11 +95,11 @@ Feature: Wordpress profile add feature
       | https://www.espn.com/soccer/ | It is a soccer Website |
 
 
-  @smoke4 @negetive
+  @smoke4 @regression
   Scenario Outline: Validating that user cannot add invalid url input
     Given I land on wordpress my user profile page
     And There no Url links present in the profile links
-    When I click the add buttion
+    When I click the add button
     And I click add url item
     Then URl and description text boxes should appear
     And I enter a valid url "<Url>" and description "<Description>"
@@ -114,7 +114,7 @@ Feature: Wordpress profile add feature
   #@smoke4
   #Scenario Outline: Validating that user can click the cancel button to abort the process
     #Given I land on wordpress my user profile page
-    #When I click the add buttion
+    #When I click the add button
     #And I click add url item
     #Then URl and description text boxes should appear
     #And I enter a valid url "<Url>" and description "<Description>"
@@ -129,15 +129,15 @@ Feature: Wordpress profile add feature
   @addWordPressSite @smoke
   Scenario: Validating that user can click the add button and add WordPress site
     Given I land on wordpress my user profile page
-    When I click the add buttion
+    When I click the add button
     And I click the Add WordPress Site item
     And I click the create site button
     Then I should land on a new window
 
-  @addWordPressSite @smoke1
+  @addWordPressSite @smoke
   Scenario: Validating that user can click the jetpack link and land on jetpack homepage
     Given I land on wordpress my user profile page
-    When I click the add buttion
+    When I click the add button
     And I click the Add WordPress Site item
     And I click the jetpack link
     Then I should land on a new jetpack window

@@ -47,13 +47,13 @@ public class PhotoUploadStepDefs {
 		photoActions.clickIicon();
 	}
 
-	@Then("I should see a message from wordpress and a link to gravator")
-	public void i_should_see_a_message_from_wordpress_and_a_link_to_gravator() {
+	@Then("I should see a message from wordpress and a link to gravatar")
+	public void i_should_see_a_message_from_wordpress_and_a_link_to_gravatar() {
 		Assert.assertEquals(true, photoActions.verifyMessage());
 	}
 
-	@Then("I click the gravator link")
-	public  void i_click_the_gravator_link() {
+	@Then("I click the gravatar link")
+	public  void i_click_the_gravatar_link() {
 		photoActions.clickGravatarLink();
 	}
 	
